@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/viewAction"
+        android:enabled="true"
+        android:icon="@drawable/ic_eye"
+        android:title="@string/menuActionView" />
+
+    <item
+        android:id="@+id/editAction"
+        android:enabled="true"
+        android:icon="@drawable/ic_pencil"
+        android:title="@string/menuActionEdit" />
+
+    <item
+        android:id="@+id/deleteAction"
+        android:enabled="true"
+        android:icon="@drawable/ic_delete"
+        android:title="@string/dmenuActionDelete" />
+</menu>

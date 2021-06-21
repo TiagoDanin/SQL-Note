@@ -9,4 +9,21 @@
 
     <string name="hello_first_fragment">Hello first fragment</string>
     <string name="hello_second_fragment">Hello second fragment. Arg: %1$s</string>
+    <string name="contactsTitle">Contacts</string>
+    <string name="notFoundContactsLabel">Without Contacts!</string>
+    <string name="menuActionView">View</string>
+    <string name="menuActionEdit">Edit</string>
+    <string name="dmenuActionDelete">Delete</string>
+    <string name="titleAlertDeletePeople">Delete People</string>
+    <string name="descriptionAlertDeletePeople">Are you sure?</string>
+    <string name="yesLabel">YES</string>
+    <string name="noLabel">NO</string>
+    <string name="contactNameView">Name: %s</string>
+    <string name="contactPhoneNumberView">Phone Number: +%s</string>
+    <string name="contactAddressView">Address: %s</string>
+    <string name="titlePageContact">Contact</string>
+    <string name="applyButton">Apply</string>
+    <string name="addressLabelEditText">Address</string>
+    <string name="phoneNumberLabelEditText">Phone Number</string>
+    <string name="nameLabelEditText">Name</string>
 </resources>
