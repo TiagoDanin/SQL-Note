@@ -1,6 +1,5 @@
 package com.tiagodanin.example.sqlcontacts;
 
-import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
@@ -13,7 +12,6 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
-import com.google.android.material.snackbar.Snackbar;
 import com.techyourchance.threadposter.BackgroundThreadPoster;
 import com.techyourchance.threadposter.UiThreadPoster;
 import com.tiagodanin.example.sqlcontacts.events.CallbackContactsListAdapter;
