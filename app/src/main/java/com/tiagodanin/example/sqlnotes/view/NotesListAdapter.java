@@ -1,4 +1,4 @@
-package com.tiagodanin.example.sqlcontacts.view;
+package com.tiagodanin.example.sqlnotes.view;
 
 import android.annotation.SuppressLint;
 import android.content.Context;
@@ -15,65 +15,77 @@ import androidx.appcompat.view.menu.MenuPopupHelper;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.google.android.material.button.MaterialButton;
-import com.tiagodanin.example.sqlcontacts.R;
-import com.tiagodanin.example.sqlcontacts.events.CallbackContactsListAdapter;
-import com.tiagodanin.example.sqlcontacts.model.Contact;
+import com.tiagodanin.example.sqlnotes.R;
+import com.tiagodanin.example.sqlnotes.events.CallbackNotesListAdapter;
+import com.tiagodanin.example.sqlnotes.model.Note;
 
 import java.util.ArrayList;
 
-public class ContactsListAdapter extends RecyclerView.Adapter {
+import io.noties.markwon.Markwon;
+
+public class NotesListAdapter extends RecyclerView.Adapter {
+    private final Markwon markdown;
     @SuppressWarnings("FieldCanBeLocal")
     private Context context;
-    private ArrayList<Contact> contactsList;
-    private CallbackContactsListAdapter callback;
+    private ArrayList<Note> notesList;
+    private CallbackNotesListAdapter callback;
 
-    public ContactsListAdapter(Context context, ArrayList<Contact> contactsList, CallbackContactsListAdapter callback) {
+    public NotesListAdapter(Context context, ArrayList<Note> notesList, CallbackNotesListAdapter callback) {
         this.context = context;
-        this.contactsList = contactsList;
+        this.notesList = notesList;
         this.callback = callback;
+
+        markdown = Markwon.create(context);
     }
 
     @Override
     public int getItemCount() {
-        return contactsList.size();
+        return notesList.size();
     }
 
     @NonNull
     @Override
     public RecyclerView.ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.fragment_card_contact, parent, false);
-        return new ContactViewHolder(view);
+        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.fragment_card_note, parent, false);
+        return new NoteViewHolder(view);
     }
 
     @Override
     public void onBindViewHolder(RecyclerView.ViewHolder holder, int position) {
-        Contact contact = contactsList.get(position);
-        ((ContactViewHolder) holder).bind(contact);
+        Note note = notesList.get(position);
+        ((NoteViewHolder) holder).bind(note);
     }
 
     @SuppressWarnings("CanBeFinal")
-    private class ContactViewHolder extends RecyclerView.ViewHolder {
-        TextView nameTextView;
-        TextView phoneNumberTextView;
+    private class NoteViewHolder extends RecyclerView.ViewHolder {
+        TextView tagTextView;
+        TextView noteTextView;
         MaterialButton optionsButton;
+        View cardLayout;
+        View colorView;
 
-        ContactViewHolder(View itemView) {
+        NoteViewHolder(View itemView) {
             super(itemView);
 
-            nameTextView = itemView.findViewById(R.id.nameText);
-            phoneNumberTextView = itemView.findViewById(R.id.phoneNumberText);
+            tagTextView = itemView.findViewById(R.id.tagText);
+            noteTextView = itemView.findViewById(R.id.noteText);
             optionsButton = itemView.findViewById(R.id.optionsButton);
+            cardLayout = itemView.findViewById(R.id.cardLayout);
+            colorView = itemView.findViewById(R.id.colorView);
         }
 
-        void bind(Contact contact) {
-            nameTextView.setText(contact.getName());
-            phoneNumberTextView.setText(String.format("+%s", contact.getPhoneNumber()));
-            optionsButton.setOnClickListener(view -> showMenu(view, R.menu.options_contact_menu, contact));
+        void bind(Note note) {
+            markdown.setMarkdown(noteTextView, note.getText());
+
+            tagTextView.setText(note.getTag());
+            optionsButton.setOnClickListener(view -> showMenu(view, R.menu.options_note_menu, note));
+            cardLayout.setOnClickListener(view -> callback.onViewSelected(note));
+            colorView.setBackgroundColor(note.getColor());
         }
 
         @SuppressWarnings("SameParameterValue")
         @SuppressLint("RestrictedApi")
-        void showMenu(View view, int menuId, Contact contact) {
+        void showMenu(View view, int menuId, Note note) {
             MenuBuilder menuBuilder = new MenuBuilder(context);
             MenuInflater inflater = new MenuInflater(context);
             inflater.inflate(menuId, menuBuilder);
@@ -85,13 +97,13 @@ public class ContactsListAdapter extends RecyclerView.Adapter {
                 public boolean onMenuItemSelected(@NonNull MenuBuilder menu, @NonNull MenuItem item) {
                     switch (item.getItemId()) {
                         case R.id.viewAction:
-                            callback.onViewSelected(contact);
+                            callback.onViewSelected(note);
                             break;
                         case R.id.editAction:
-                            callback.onEditSelected(contact);
+                            callback.onEditSelected(note);
                             break;
                         case R.id.deleteAction:
-                            callback.onDeleteSelected(contact);
+                            callback.onDeleteSelected(note);
                             break;
                     }
 

@@ -5,7 +5,7 @@ android {
     buildToolsVersion "30.0.3"
 
     defaultConfig {
-        applicationId "com.tiagodanin.example.sqlcontacts"
+        applicationId "com.tiagodanin.example.sqlnotes"
         minSdkVersion 26
         targetSdkVersion 30
         versionCode 1
@@ -35,6 +35,10 @@ dependencies {
     implementation 'androidx.navigation:navigation-ui:2.3.5'
     implementation 'com.techyourchance.threadposter:threadposter:0.8.3'
     implementation 'org.mym.material:md-colors:1.0.0'
+    implementation 'com.github.skydoves:colorpickerpreference:2.0.5'
+    implementation 'io.noties.markwon:core:4.6.2'
+    implementation 'io.noties.markwon:editor:4.6.2'
+
     testImplementation 'junit:junit:4.12'
     androidTestImplementation 'androidx.test.ext:junit:1.1.2'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.3.0'

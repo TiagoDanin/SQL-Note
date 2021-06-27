@@ -1,4 +1,4 @@
-package com.tiagodanin.example.sqlcontacts;
+package com.tiagodanin.example.sqlnotes;
 
 import android.content.Context;
 
@@ -21,6 +21,6 @@ public class ExampleInstrumentedTest {
     public void useAppContext() {
         // Context of the app under test.
         Context appContext = InstrumentationRegistry.getInstrumentation().getTargetContext();
-        assertEquals("com.tiagodanin.example.sqlcontacts", appContext.getPackageName());
+        assertEquals("com.tiagodanin.example.sqlnotes", appContext.getPackageName());
     }
 }

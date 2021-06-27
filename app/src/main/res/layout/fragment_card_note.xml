@@ -2,12 +2,12 @@
 <androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/messageTextCardLayout"
+    android:id="@+id/cardLayout"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:paddingStart="8dp"
-    android:paddingEnd="8dp"
     android:paddingTop="8dp"
+    android:paddingEnd="8dp"
     app:cardBackgroundColor="#EEF1F6"
     app:cardCornerRadius="4dp"
     app:cardElevation="0dp"
@@ -20,8 +20,14 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:baselineAligned="false">
+        android:baselineAligned="false"
+        android:orientation="horizontal">
+
+        <View
+            android:id="@+id/colorView"
+            android:layout_width="10dp"
+            android:layout_height="70dp"
+            android:background="#ffcc22" />
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -33,7 +39,7 @@
             tools:ignore="InefficientWeight">
 
             <TextView
-                android:id="@+id/nameText"
+                android:id="@+id/tagText"
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
                 android:layout_marginTop="8dp"
@@ -42,17 +48,18 @@
                 android:textColor="#333"
                 android:textSize="18sp"
                 android:textStyle="bold"
-                tools:text="Tiago Danin" />
+                tools:text="Game" />
 
             <TextView
-                android:id="@+id/phoneNumberText"
+                android:id="@+id/noteText"
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
                 android:layout_marginBottom="8dp"
-                android:maxWidth="260dp"
+                android:ellipsize="end"
+                android:singleLine="true"
                 android:textColor="#000000"
                 android:textSize="16sp"
-                tools:text="+1234567890" />
+                tools:text="@tools:sample/lorem/random" />
         </LinearLayout>
 
         <LinearLayout
@@ -66,11 +73,11 @@
                 android:id="@+id/optionsButton"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:background="?attr/selectableItemBackground"
-                app:cornerSize="35dp"
-                app:cornerFamily="cut"
-                android:layout_marginEnd="6dp"
                 android:layout_marginStart="2dp"
+                android:layout_marginEnd="6dp"
+                android:background="?attr/selectableItemBackground"
+                app:cornerFamily="cut"
+                app:cornerSize="35dp"
                 app:icon="@drawable/ic_dots_vertical"
                 app:iconGravity="textStart"
                 app:iconPadding="0dp"

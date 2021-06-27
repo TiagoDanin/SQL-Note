@@ -1,4 +1,4 @@
-package com.tiagodanin.example.sqlcontacts;
+package com.tiagodanin.example.sqlnotes;
 
 import org.junit.Test;
 

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.tiagodanin.example.sqlcontacts">
+    package="com.tiagodanin.example.sqlnotes">
 
     <application
         android:allowBackup="true"
@@ -19,8 +19,8 @@
             </intent-filter>
         </activity>
 
-        <activity android:name=".pages.ViewContactActivity" android:parentActivityName=".MainActivity" />
-        <activity android:name=".pages.EditContactActivity" android:parentActivityName=".MainActivity" />
+        <activity android:name=".pages.ViewNoteActivity" android:parentActivityName=".MainActivity" />
+        <activity android:name=".pages.EditNoteActivity" android:parentActivityName=".MainActivity" />
     </application>
 
 </manifest>

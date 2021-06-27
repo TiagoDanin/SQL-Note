@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">SqlContacts</string>
+    <string name="app_name">SqlNotes</string>
     <string name="action_settings">Settings</string>
     <!-- Strings used for fragments for navigation -->
     <string name="first_fragment_label">First Fragment</string>
@@ -9,21 +9,25 @@
 
     <string name="hello_first_fragment">Hello first fragment</string>
     <string name="hello_second_fragment">Hello second fragment. Arg: %1$s</string>
-    <string name="contactsTitle">Contacts</string>
-    <string name="notFoundContactsLabel">Without Contacts!</string>
+    <string name="notesTitle">Notes</string>
+    <string name="notFoundNotesLabel">Without Notes!</string>
     <string name="menuActionView">View</string>
     <string name="menuActionEdit">Edit</string>
     <string name="dmenuActionDelete">Delete</string>
-    <string name="titleAlertDeletePeople">Delete People</string>
-    <string name="descriptionAlertDeletePeople">Are you sure?</string>
+    <string name="titleAlertDeleteNote">Delete Note</string>
+    <string name="descriptionAlertDeleteNote">Are you sure?</string>
     <string name="yesLabel">YES</string>
     <string name="noLabel">NO</string>
-    <string name="contactNameView">Name: %s</string>
-    <string name="contactPhoneNumberView">Phone Number: +%s</string>
-    <string name="contactAddressView">Address: %s</string>
-    <string name="titlePageContact">Contact</string>
-    <string name="applyButton">Apply</string>
+    <string name="noteNameView">Name: %s</string>
+    <string name="notePhoneNumberView">Phone Number: +%s</string>
+    <string name="noteAddressView">Address: %s</string>
+    <string name="titlePageNote">Note</string>
+    <string name="applyButton">Save</string>
     <string name="addressLabelEditText">Address</string>
     <string name="phoneNumberLabelEditText">Phone Number</string>
     <string name="nameLabelEditText">Name</string>
+    <string name="tagLabelEditText">Name</string>
+    <string name="noteLabelEditText">Text</string>
+    <string name="createdAtLabel">Created at %s</string>
+    <string name="updatedAtLabel">Updated at %s</string>
 </resources>

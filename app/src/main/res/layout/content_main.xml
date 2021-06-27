@@ -6,10 +6,10 @@
     app:layout_behavior="@string/appbar_scrolling_view_behavior">
 
     <TextView
-        android:id="@+id/notFoundContactsText"
+        android:id="@+id/notFoundNotesText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/notFoundContactsLabel"
+        android:text="@string/notFoundNotesLabel"
         android:textSize="36sp"
         android:textStyle="bold"
         android:visibility="gone"
@@ -19,7 +19,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/recyclerContacts"
+        android:id="@+id/recyclerNotes"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         app:layout_constrainedHeight="true"
