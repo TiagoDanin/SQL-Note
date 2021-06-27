@@ -11,6 +11,8 @@ import com.tiagodanin.example.sqlnotes.R;
 import com.tiagodanin.example.sqlnotes.model.Note;
 import com.tiagodanin.example.sqlnotes.utils.DatabaseHelper;
 
+import io.noties.markwon.Markwon;
+
 public class ViewNoteActivity extends AppCompatActivity {
 
     @Override
@@ -18,6 +20,8 @@ public class ViewNoteActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_view_note);
         setTitle(getString(R.string.titlePageNote));
+
+        Markwon markdown = Markwon.create(this);
 
         DatabaseHelper database = new DatabaseHelper(this);
 
@@ -34,6 +38,6 @@ public class ViewNoteActivity extends AppCompatActivity {
         colorView.setBackgroundColor(note.getColor());
         createdText.setText(String.format(getString(R.string.createdAtLabel), note.getTextDataCreated()));
         updatedText.setText(String.format(getString(R.string.updatedAtLabel), note.getTextDateUpdated()));
-        noteText.setText(note.getText());
+        markdown.setMarkdown(noteText, note.getText());
     }
 }
